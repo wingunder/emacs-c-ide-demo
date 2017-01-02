@@ -15,7 +15,7 @@
 
 (setq-default indent-tabs-mode nil)
 (delete-selection-mode)
-(global-set-key (kbd "RET") 'newline-and-indent)
+;(global-set-key (kbd "RET") 'newline-and-indent)
 
 ;; GROUP: Editing -> Killing
 (setq kill-ring-max 5000 ; increase kill-ring capacity
@@ -117,7 +117,7 @@ point reaches the beginning or end of the buffer, stop there."
     (when (= orig-point (point))
       (move-beginning-of-line 1))))
 
-(global-set-key (kbd "C-a") 'prelude-move-beginning-of-line)
+;(global-set-key (kbd "C-a") 'prelude-move-beginning-of-line)
 
 (defadvice kill-ring-save (before slick-copy activate compile)
   "When called interactively with no active region, copy a single

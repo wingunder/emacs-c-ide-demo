@@ -1,5 +1,5 @@
 (menu-bar-mode -1)
-(tool-bar-mode -1)
+;(tool-bar-mode -1)
 
 (setq gc-cons-threshold 100000000)
 (setq inhibit-startup-message t)
@@ -47,14 +47,14 @@
   (setq projectile-enable-caching t))
 
 ;; Package zygospore
-(use-package zygospore
-  :bind (("C-x 1" . zygospore-toggle-delete-other-windows)
-         ("RET" .   newline-and-indent)))
+;(use-package zygospore
+;  :bind (("C-x 1" . zygospore-toggle-delete-other-windows)
+;         ("RET" .   newline-and-indent)))
 
   ; automatically indent when press RET
 
 ;; activate whitespace-mode to view all whitespace characters
 (global-set-key (kbd "C-c w") 'whitespace-mode)
-(windmove-default-keybindings)
+;(windmove-default-keybindings)
 
 (provide 'setup-general)
