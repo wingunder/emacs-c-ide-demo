@@ -1,7 +1,17 @@
 ;; company-c-headers
 (use-package company-c-headers
   :init
-  (add-to-list 'company-backends 'company-c-headers))
+  (add-to-list 'company-backends 'company-c-headers)
+  (add-to-list 'company-c-headers-path-system (list "/usr/include/c++/6" \
+                                                    "/usr/include/x86_64-linux-gnu/c++/6" \
+                                                    "/usr/include/c++/6/backward" \
+                                                    "/usr/lib/gcc/x86_64-linux-gnu/6/include" \
+                                                    "/usr/local/include" \
+                                                    "/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed" \
+                                                    "/usr/include/x86_64-linux-gnu" \
+                                                    "/usr/include")))
+
+(setq company-clang-arguments '("-std=c++11"))
 
 ;; hs-minor-mode for folding source code
 (add-hook 'c-mode-common-hook 'hs-minor-mode)
