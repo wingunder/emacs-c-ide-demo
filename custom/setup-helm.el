@@ -29,8 +29,8 @@
     (define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
 
     (define-key helm-grep-mode-map (kbd "<return>")  'helm-grep-mode-jump-other-window)
-    (define-key helm-grep-mode-map (kbd "n")  'helm-grep-mode-jump-other-window-forward)
-    (define-key helm-grep-mode-map (kbd "p")  'helm-grep-mode-jump-other-window-backward)
+;    (define-key helm-grep-mode-map (kbd "n")  'helm-grep-mode-jump-other-window-forward)
+;    (define-key helm-grep-mode-map (kbd "p")  'helm-grep-mode-jump-other-window-backward)
 
     (when (executable-find "curl")
       (setq helm-google-suggest-use-curl-p t))
@@ -70,10 +70,10 @@
 
     (add-to-list 'helm-sources-using-default-as-input 'helm-source-man-pages)
 
-    (global-set-key (kbd "M-x") 'helm-M-x)
+;    (global-set-key (kbd "M-x") 'helm-M-x)
     (global-set-key (kbd "M-y") 'helm-show-kill-ring)
     (global-set-key (kbd "C-x b") 'helm-buffers-list)
-    (global-set-key (kbd "C-x C-f") 'helm-find-files)
+;    (global-set-key (kbd "C-x C-f") 'helm-find-files)
     (global-set-key (kbd "C-c r") 'helm-recentf)
     (global-set-key (kbd "C-h SPC") 'helm-all-mark-rings)
     (global-set-key (kbd "C-c h o") 'helm-occur)
