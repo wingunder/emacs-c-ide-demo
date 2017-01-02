@@ -45,3 +45,98 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+(require 'expand-region)
+(global-set-key (kbd "M-2") 'er/expand-region)
+
+(require 'ido)
+(ido-mode t)
+
+(require 'recentf)
+
+;; get rid of `find-file-read-only' and replace it with something
+;; more useful.
+(global-set-key (kbd "C-x C-r") 'ido-recentf-open)
+;(global-set-key (kbd "C-x C-f") 'ido-find-file)
+
+;; enable recent files mode.
+(recentf-mode t)
+
+;; 50 files ought to be enough.
+(setq recentf-max-saved-items 50)
+
+(defun ido-recentf-open ()
+  "Use `ido-completing-read' to \\[find-file] a recent file"
+  (interactive)
+  (if (find-file (ido-completing-read "Find recent file: " recentf-list))
+      (message "Opening file...")
+    (message "Aborting")))
+
+(setq inhibit-splash-screen t)
+
+(setq prelude-guru nil)
+(normal-erase-is-backspace-mode 0)
+(delete-selection-mode 1)
+(transient-mark-mode 1)
+(setq shift-selection-mode t)
+
+(column-number-mode 1)
+(setq display-time-24hr-format t)
+(display-time-mode 1)
+
+;(setq scroll-preserve-screen-position 1)
+;(setq kill-ring-max 5)
+(setq bookmark-save-flag 1)
+(setq show-trailing-whitespace t)
+(setq indicate-empty-lines 1)
+;(setq scroll-conservatively 0)
+
+; Don't backup!
+(setq make-backup-files nil)
+(setq auto-save-mode 0)
+
+;;; Function Key maps
+(global-set-key [f3] 'revert-buffer)
+;(global-set-key [f4] 'speedbar-get-focus)
+(global-set-key [f7] 'goto-line)
+(global-set-key [f9] 'compile)
+
+;;; Desktop saving
+;(load "~/.emacs.d/.emacs.desktop")
+;(desktop-load-default)
+;(desktop-read)
+;(setq desktop-missing-file-warning t)
+
+; Key bindings, when using GNU screen.
+;(define-key global-map [?\e ?\[ ?2 ?\; ?2 ?~] [S-insert])
+(define-key global-map [?\e ?\[ ?3 ?\; ?2 ?z] [S-delete])
+(define-key global-map [?\e ?\[ ?2 ?\; ?5 ?z] [C-insert])
+(define-key global-map [?\e ?\[ ?3 ?\; ?5 ?z] [C-delete])
+
+(define-key global-map [?\e ?\[ ?2 ?2 ?2 ?z] [next])
+(define-key global-map [?\e ?\[ ?2 ?1 ?6 ?z] [prior])
+
+(define-key global-map [?\e ?\[ ?1 ?\; ?2 ?A] [S-up])
+(define-key global-map [?\e ?\[ ?1 ?\; ?2 ?B] [S-down])
+(define-key global-map [?\e ?\[ ?1 ?\; ?2 ?C] [S-right])
+(define-key global-map [?\e ?\[ ?1 ?\; ?2 ?D] [S-left])
+(define-key global-map [?\e ?\[ ?1 ?\; ?2 ?F] [S-end])
+;(define-key global-map [?\e ?\[ ?1 ?\; ?2 ?G] [S-next])
+(define-key global-map [?\e ?\[ ?1 ?\; ?2 ?H] [S-home])
+
+(define-key global-map [?\e ?\[ ?1 ?\; ?6 ?A] [C-S-up])
+(define-key global-map [?\e ?\[ ?1 ?\; ?6 ?B] [C-S-down])
+(define-key global-map [?\e ?\[ ?1 ?\; ?6 ?C] [C-S-right])
+(define-key global-map [?\e ?\[ ?1 ?\; ?6 ?D] [C-S-left])
+;(define-key global-map [?\e ?\[ ?1 ?\; ?6 ?E] [C-S-prior])
+(define-key global-map [?\e ?\[ ?1 ?\; ?6 ?H] [C-S-home])
+(define-key global-map [?\e ?\[ ?1 ?\; ?6 ?F] [C-S-end])
+
+(define-key global-map [?\e ?\[ ?1 ?\; ?5 ?A] [C-up])
+(define-key global-map [?\e ?\[ ?1 ?\; ?5 ?B] [C-down])
+(define-key global-map [?\e ?\[ ?1 ?\; ?5 ?C] [C-right])
+(define-key global-map [?\e ?\[ ?1 ?\; ?5 ?D] [C-left])
+(define-key global-map [?\e ?\[ ?1 ?\; ?5 ?H] [C-home])
+(define-key global-map [?\e ?\[ ?1 ?\; ?5 ?F] [C-end])
+;(define-key global-map [?\e ?\[ ?5 ?\; ?5 ?~] [C-prior])
+;(define-key global-map [?\e ?\[ ?6 ?\; ?5 ?~] [C-next])
