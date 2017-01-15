@@ -102,10 +102,7 @@
 (global-set-key [f9] 'compile)
 
 ;;; Desktop saving
-;(load "~/.emacs.d/.emacs.desktop")
-;(desktop-load-default)
-;(desktop-read)
-;(setq desktop-missing-file-warning t)
+(desktop-save-mode 1)
 
 ; Key bindings, when using GNU screen.
 ;(define-key global-map [?\e ?\[ ?2 ?\; ?2 ?~] [S-insert])
