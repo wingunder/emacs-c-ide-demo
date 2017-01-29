@@ -4,7 +4,7 @@
 (setq gc-cons-threshold 100000000)
 (setq inhibit-startup-message t)
 
-(defalias 'yes-or-no-p 'y-or-n-p)
+;(defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; show unncessary whitespace that can mess up your diff
 (add-hook 'prog-mode-hook
