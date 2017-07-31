@@ -45,6 +45,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+(global-set-key (kbd "C-x g") 'magit-status)
 
 (require 'expand-region)
 (global-set-key (kbd "M-2") 'er/expand-region)
