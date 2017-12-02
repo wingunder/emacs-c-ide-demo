@@ -15,6 +15,10 @@
 
 (add-to-list 'load-path "~/.emacs.d/custom")
 
+(require 'color-theme)
+(color-theme-initialize)
+(color-theme-charcoal-black)
+
 (require 'setup-general)
 (if (version< emacs-version "24.4")
     (require 'setup-ivy-counsel)
@@ -38,13 +42,20 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (zygospore helm-gtags helm yasnippet ws-butler volatile-highlights use-package undo-tree iedit dtrt-indent counsel-projectile company clean-aindent-mode anzu))))
+	(zenburn-theme zygospore helm-gtags helm yasnippet ws-butler volatile-highlights use-package undo-tree iedit dtrt-indent counsel-projectile company clean-aindent-mode anzu))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(magit-diff-added ((t (:background "black" :foreground "green"))))
+ '(magit-diff-added-highlight ((t (:background "black" :foreground "green"))))
+ '(magit-diff-base ((t (:background "black" :foreground "yellow"))))
+ '(magit-diff-base-highlight ((t (:background "black" :foreground "yellow"))))
+ '(magit-diff-lines-heading ((t (:inherit magit-diff-hunk-heading-highlight :background "black" :foreground "green"))))
+ '(magit-diff-removed ((t (:background "black" :foreground "red"))))
+ '(magit-diff-removed-highlight ((t (:background "black" :foreground "red")))))
+
 (global-set-key (kbd "C-x g") 'magit-status)
 
 (require 'expand-region)
