@@ -107,8 +107,25 @@
 (setq make-backup-files nil)
 (setq auto-save-mode 0)
 
+(setq-default c-basic-offset 4
+			  tab-width 4
+			  indent-tabs-mode 0)
+(setq-default c-basic-offset 4
+			  tab-width 4
+			  indent-tabs-mode t)
+;;;(setq tab-always-indent 1)
+;;(setq indent-tabs-mode 1)
+;;(setq standard-indent 4)
+;;(custom-set-variables
+;;  ;; custom-set-variables was added by Custom -- don't edit or cut/paste it!
+;;  ;; Your init file should contain only one such instance.
+;; '(tab-width 4))
+
+;(setq tab-width 4)
+
 (global-flycheck-mode)
 (setq flycheck-emacs-lisp-load-path 'inherit)
+
 ;;; Function Key maps
 (global-set-key [f3] 'revert-buffer)
 ;(global-set-key [f4] 'speedbar-get-focus)
