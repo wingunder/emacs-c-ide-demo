@@ -1,4 +1,7 @@
+;;; package --- emacsinit:
+;;; Commentary:
 (require 'package)
+;;; Code:
 (add-to-list 'package-archives
          '("melpa" . "http://melpa.org/packages/") t)
 
@@ -27,8 +30,6 @@
 ;; (require 'setup-ggtags)
 (require 'setup-cedet)
 (require 'setup-editing)
-
-
 
 ;; function-args
 ;; (require 'function-args)
@@ -90,7 +91,7 @@
 (normal-erase-is-backspace-mode 0)
 (delete-selection-mode 1)
 (transient-mark-mode 1)
-(setq shift-selection-mode t)
+(setq shift-selection-mode 1)
 
 (column-number-mode 1)
 (setq display-time-24hr-format t)
@@ -168,3 +169,5 @@
 (define-key global-map [?\e ?\[ ?1 ?\; ?5 ?F] [C-end])
 ;(define-key global-map [?\e ?\[ ?5 ?\; ?5 ?~] [C-prior])
 ;(define-key global-map [?\e ?\[ ?6 ?\; ?5 ?~] [C-next])
+
+;;; init.el ends here
