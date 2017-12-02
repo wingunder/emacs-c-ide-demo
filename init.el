@@ -107,6 +107,8 @@
 (setq make-backup-files nil)
 (setq auto-save-mode 0)
 
+(global-flycheck-mode)
+(setq flycheck-emacs-lisp-load-path 'inherit)
 ;;; Function Key maps
 (global-set-key [f3] 'revert-buffer)
 ;(global-set-key [f4] 'speedbar-get-focus)
